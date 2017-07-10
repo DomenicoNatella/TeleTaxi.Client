@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
 
 android {
     compileSdkVersion 25
@@ -17,8 +21,67 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
+
+
+
+
+task checkstyle(type: Checkstyle) {
+    ignoreFailures = true
+    configFile file("config/quality/checkstyle/checkstyle.xml")
+    //source = fileTree('src/main/java')
+    source = fileTree('src/main/java')
+    include '**/*.java'
+    exclude '**/gen/**'
+    classpath = files()
+    reports {
+        xml.enabled false
+        html.enabled = true
+    }
+}
+
+task findbugs(type: FindBugs) {
+    description 'Run findbugs'
+    group 'verification'
+    classes = fileTree('build/intermediates/classes/debug/')
+    source = fileTree('src/main/java')
+    classpath = files()
+    effort = 'max'
+    reportLevel = "high"
+    ignoreFailures = true
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html {
+            destination "$project.buildDir/reports/findbugs/findbugs-output.html"
+        }
+    }
+}
+
+
+task pmd(type: Pmd) {
+    ignoreFailures = true
+    ruleSetFiles = files("config/quality/pmd/pmd-ruleset.xml")
+    //ruleSets = []
+
+    //source 'src'
+    source = fileTree('src/main/java')
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html {
+            destination "$project.buildDir/reports/pmd/pmd.html"
+        }
+    }
+}
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
