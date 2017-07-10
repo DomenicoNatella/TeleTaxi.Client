@@ -15,11 +15,11 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textHome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="cursive"
-            android:text="@string/title_home"
+            android:text="@string/home"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="30sp"
             android:textStyle="bold"
