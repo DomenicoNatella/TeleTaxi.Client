@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Prenota Taxi</string>
+    <string name="home">Prenotazioni effettuate</string>
+    <string name="title_home">Home</string>
+    <string name="title_prenotazione">Prenota!</string>
+    <string name="title_notifications">Notifica</string>
+    <string name="user">Username</string>
+    <string name="nome">Nome</string>
+    <string name="cognome">Cognome</string>
+    <string name="telefono">Telefono</string>
+    <string name="data_di_nascita">Data di nascita</string>
+    <string name="confirm">Conferma</string>
+    <string name="cancella">Cancella</string>
+    <string name="destinazione">Destinazione</string>
+    <string name="servizi">Scegli il tuo servizio!</string>
+    <string name="notifica">Scegli quando essere avvisato!</string>
+
+    <string-array
+        name="servizi_speciali_choiche">
+        <item>bagagli</item>
+        <item>animali</item>
+        <item>disabili</item>
+    </string-array>
+
+    <string-array
+        name="timer_notifica_choiche">
+        <item>2 minuti</item>
+        <item>5 minuti</item>
+        <item>7 minuti</item>
+    </string-array>
+
+</resources>

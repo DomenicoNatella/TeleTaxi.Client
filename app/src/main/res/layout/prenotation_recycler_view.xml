@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/lib/com.app.chasebank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.application.teletaxiclient.PrenotazioneRecyclerViewAdapter
+        android:background="#ccc" android:layout_width="match_parent" android:layout_height="116dp"
+        android:paddingLeft="20dp" android:paddingBottom="40dp" app:exampleDimension="24sp"
+        app:exampleColor="#33b5e5" app:exampleString="Hello, MyRecyclerViewAdapter"
+        app:exampleDrawable="@android:drawable/ic_menu_add" />
+
+</FrameLayout>
